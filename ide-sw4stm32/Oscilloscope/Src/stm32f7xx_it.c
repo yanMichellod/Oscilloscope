@@ -40,8 +40,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern HCD_HandleTypeDef hhcd_USB_OTG_FS;
-extern HCD_HandleTypeDef hhcd_USB_OTG_HS;
+extern ADC_HandleTypeDef hadc3;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Interruption and Exception Handlers         */ 
@@ -58,7 +57,9 @@ void SysTick_Handler(void)
   HAL_IncTick();
   HAL_SYSTICK_IRQHandler();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-
+  HAL_ADC_Start(&hadc3);
+  HAL_ADC_ConvCpltCallback(&hadc3);
+  HAL_ADC_Stop(&hadc3);
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -70,31 +71,17 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-* @brief This function handles USB On The Go FS global interrupt.
+* @brief This function handles ADC1, ADC2 and ADC3 global interrupts.
 */
-void OTG_FS_IRQHandler(void)
+void ADC_IRQHandler(void)
 {
-  /* USER CODE BEGIN OTG_FS_IRQn 0 */
+  /* USER CODE BEGIN ADC_IRQn 0 */
 
-  /* USER CODE END OTG_FS_IRQn 0 */
-  HAL_HCD_IRQHandler(&hhcd_USB_OTG_FS);
-  /* USER CODE BEGIN OTG_FS_IRQn 1 */
+  /* USER CODE END ADC_IRQn 0 */
+  HAL_ADC_IRQHandler(&hadc3);
+  /* USER CODE BEGIN ADC_IRQn 1 */
 
-  /* USER CODE END OTG_FS_IRQn 1 */
-}
-
-/**
-* @brief This function handles USB On The Go HS global interrupt.
-*/
-void OTG_HS_IRQHandler(void)
-{
-  /* USER CODE BEGIN OTG_HS_IRQn 0 */
-
-  /* USER CODE END OTG_HS_IRQn 0 */
-  HAL_HCD_IRQHandler(&hhcd_USB_OTG_HS);
-  /* USER CODE BEGIN OTG_HS_IRQn 1 */
-
-  /* USER CODE END OTG_HS_IRQn 1 */
+  /* USER CODE END ADC_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

@@ -16,7 +16,6 @@ C_SRCS += \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c \
-../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.c \
@@ -30,16 +29,13 @@ C_SRCS += \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc_ex.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai_ex.c \
-../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spdifrx.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c \
 ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c \
-../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.c \
-../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c \
-../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c 
+../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.c 
 
 OBJS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o \
@@ -54,7 +50,6 @@ OBJS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.o \
@@ -68,16 +63,13 @@ OBJS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc_ex.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai_ex.o \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spdifrx.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.o \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.o \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o 
+./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.o 
 
 C_DEPS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.d \
@@ -92,7 +84,6 @@ C_DEPS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.d \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.d \
@@ -106,16 +97,13 @@ C_DEPS += \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc_ex.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai_ex.d \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spdifrx.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.d \
 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.d \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.d \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.d \
-./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.d 
+./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
