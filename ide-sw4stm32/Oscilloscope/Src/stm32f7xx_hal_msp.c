@@ -91,12 +91,10 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     PF7     ------> ADC3_IN5
     PF6     ------> ADC3_IN4
     PF10     ------> ADC3_IN8
-    PF9     ------> ADC3_IN7
     PF8     ------> ADC3_IN6
     PA0/WKUP     ------> ADC3_IN0 
     */
-    GPIO_InitStruct.Pin = ARDUINO_A4_Pin|ARDUINO_A5_Pin|ARDUINO_A1_Pin|ARDUINO_A2_Pin 
-                          |ARDUINO_A3_Pin;
+    GPIO_InitStruct.Pin = ARDUINO_A4_Pin|ARDUINO_A5_Pin|ARDUINO_A1_Pin|ARDUINO_A3_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
@@ -131,12 +129,10 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     PF7     ------> ADC3_IN5
     PF6     ------> ADC3_IN4
     PF10     ------> ADC3_IN8
-    PF9     ------> ADC3_IN7
     PF8     ------> ADC3_IN6
     PA0/WKUP     ------> ADC3_IN0 
     */
-    HAL_GPIO_DeInit(GPIOF, ARDUINO_A4_Pin|ARDUINO_A5_Pin|ARDUINO_A1_Pin|ARDUINO_A2_Pin 
-                          |ARDUINO_A3_Pin);
+    HAL_GPIO_DeInit(GPIOF, ARDUINO_A4_Pin|ARDUINO_A5_Pin|ARDUINO_A1_Pin|ARDUINO_A3_Pin);
 
     HAL_GPIO_DeInit(ARDUINO_A0_GPIO_Port, ARDUINO_A0_Pin);
 
@@ -255,101 +251,6 @@ void HAL_DCMI_MspDeInit(DCMI_HandleTypeDef* hdcmi)
   /* USER CODE BEGIN DCMI_MspDeInit 1 */
 
   /* USER CODE END DCMI_MspDeInit 1 */
-  }
-
-}
-
-void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
-{
-
-  GPIO_InitTypeDef GPIO_InitStruct;
-  if(hi2c->Instance==I2C1)
-  {
-  /* USER CODE BEGIN I2C1_MspInit 0 */
-
-  /* USER CODE END I2C1_MspInit 0 */
-  
-    /**I2C1 GPIO Configuration    
-    PB8     ------> I2C1_SCL
-    PB9     ------> I2C1_SDA 
-    */
-    GPIO_InitStruct.Pin = ARDUINO_SCL_D15_Pin|ARDUINO_SDA_D14_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-    /* Peripheral clock enable */
-    __HAL_RCC_I2C1_CLK_ENABLE();
-  /* USER CODE BEGIN I2C1_MspInit 1 */
-
-  /* USER CODE END I2C1_MspInit 1 */
-  }
-  else if(hi2c->Instance==I2C3)
-  {
-  /* USER CODE BEGIN I2C3_MspInit 0 */
-
-  /* USER CODE END I2C3_MspInit 0 */
-  
-    /**I2C3 GPIO Configuration    
-    PH7     ------> I2C3_SCL
-    PH8     ------> I2C3_SDA 
-    */
-    GPIO_InitStruct.Pin = LCD_SCL_Pin|LCD_SDA_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    GPIO_InitStruct.Alternate = GPIO_AF4_I2C3;
-    HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
-
-    /* Peripheral clock enable */
-    __HAL_RCC_I2C3_CLK_ENABLE();
-  /* USER CODE BEGIN I2C3_MspInit 1 */
-
-  /* USER CODE END I2C3_MspInit 1 */
-  }
-
-}
-
-void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
-{
-
-  if(hi2c->Instance==I2C1)
-  {
-  /* USER CODE BEGIN I2C1_MspDeInit 0 */
-
-  /* USER CODE END I2C1_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_I2C1_CLK_DISABLE();
-  
-    /**I2C1 GPIO Configuration    
-    PB8     ------> I2C1_SCL
-    PB9     ------> I2C1_SDA 
-    */
-    HAL_GPIO_DeInit(GPIOB, ARDUINO_SCL_D15_Pin|ARDUINO_SDA_D14_Pin);
-
-  /* USER CODE BEGIN I2C1_MspDeInit 1 */
-
-  /* USER CODE END I2C1_MspDeInit 1 */
-  }
-  else if(hi2c->Instance==I2C3)
-  {
-  /* USER CODE BEGIN I2C3_MspDeInit 0 */
-
-  /* USER CODE END I2C3_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_I2C3_CLK_DISABLE();
-  
-    /**I2C3 GPIO Configuration    
-    PH7     ------> I2C3_SCL
-    PH8     ------> I2C3_SDA 
-    */
-    HAL_GPIO_DeInit(GPIOH, LCD_SCL_Pin|LCD_SDA_Pin);
-
-  /* USER CODE BEGIN I2C3_MspDeInit 1 */
-
-  /* USER CODE END I2C3_MspDeInit 1 */
   }
 
 }
@@ -625,58 +526,6 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
 
 }
 
-void HAL_SPDIFRX_MspInit(SPDIFRX_HandleTypeDef* hspdifrx)
-{
-
-  GPIO_InitTypeDef GPIO_InitStruct;
-  if(hspdifrx->Instance==SPDIFRX)
-  {
-  /* USER CODE BEGIN SPDIFRX_MspInit 0 */
-
-  /* USER CODE END SPDIFRX_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_SPDIFRX_CLK_ENABLE();
-  
-    /**SPDIFRX GPIO Configuration    
-    PD7     ------> SPDIFRX_IN0 
-    */
-    GPIO_InitStruct.Pin = SPDIF_RX0_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF8_SPDIFRX;
-    HAL_GPIO_Init(SPDIF_RX0_GPIO_Port, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN SPDIFRX_MspInit 1 */
-
-  /* USER CODE END SPDIFRX_MspInit 1 */
-  }
-
-}
-
-void HAL_SPDIFRX_MspDeInit(SPDIFRX_HandleTypeDef* hspdifrx)
-{
-
-  if(hspdifrx->Instance==SPDIFRX)
-  {
-  /* USER CODE BEGIN SPDIFRX_MspDeInit 0 */
-
-  /* USER CODE END SPDIFRX_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_SPDIFRX_CLK_DISABLE();
-  
-    /**SPDIFRX GPIO Configuration    
-    PD7     ------> SPDIFRX_IN0 
-    */
-    HAL_GPIO_DeInit(SPDIF_RX0_GPIO_Port, SPDIF_RX0_Pin);
-
-  /* USER CODE BEGIN SPDIFRX_MspDeInit 1 */
-
-  /* USER CODE END SPDIFRX_MspDeInit 1 */
-  }
-
-}
-
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 {
 
@@ -745,6 +594,7 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 {
 
+  GPIO_InitTypeDef GPIO_InitStruct;
   if(htim_base->Instance==TIM1)
   {
   /* USER CODE BEGIN TIM1_MspInit 0 */
@@ -752,6 +602,20 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE END TIM1_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_TIM1_CLK_ENABLE();
+  
+    /**TIM1 GPIO Configuration    
+    PA8     ------> TIM1_CH1 
+    */
+    GPIO_InitStruct.Pin = ARDUINO_PWM_D5_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF1_TIM1;
+    HAL_GPIO_Init(ARDUINO_PWM_D5_GPIO_Port, &GPIO_InitStruct);
+
+    /* TIM1 interrupt Init */
+    HAL_NVIC_SetPriority(TIM1_CC_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM1_CC_IRQn);
   /* USER CODE BEGIN TIM1_MspInit 1 */
 
   /* USER CODE END TIM1_MspInit 1 */
@@ -824,31 +688,11 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct;
-  if(htim->Instance==TIM1)
-  {
-  /* USER CODE BEGIN TIM1_MspPostInit 0 */
-
-  /* USER CODE END TIM1_MspPostInit 0 */
-    /**TIM1 GPIO Configuration    
-    PA8     ------> TIM1_CH1 
-    */
-    GPIO_InitStruct.Pin = ARDUINO_PWM_D5_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF1_TIM1;
-    HAL_GPIO_Init(ARDUINO_PWM_D5_GPIO_Port, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN TIM1_MspPostInit 1 */
-
-  /* USER CODE END TIM1_MspPostInit 1 */
-  }
-  else if(htim->Instance==TIM2)
+  if(htim->Instance==TIM2)
   {
   /* USER CODE BEGIN TIM2_MspPostInit 0 */
 
   /* USER CODE END TIM2_MspPostInit 0 */
-  
     /**TIM2 GPIO Configuration    
     PA15     ------> TIM2_CH1 
     */
@@ -936,6 +780,14 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE END TIM1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_TIM1_CLK_DISABLE();
+  
+    /**TIM1 GPIO Configuration    
+    PA8     ------> TIM1_CH1 
+    */
+    HAL_GPIO_DeInit(ARDUINO_PWM_D5_GPIO_Port, ARDUINO_PWM_D5_Pin);
+
+    /* TIM1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TIM1_CC_IRQn);
   /* USER CODE BEGIN TIM1_MspDeInit 1 */
 
   /* USER CODE END TIM1_MspDeInit 1 */
@@ -1309,97 +1161,6 @@ void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef* hsdram){
   /* USER CODE BEGIN SDRAM_MspDeInit 1 */
 
   /* USER CODE END SDRAM_MspDeInit 1 */
-}
-
-static uint32_t SAI2_client =0;
-
-void HAL_SAI_MspInit(SAI_HandleTypeDef* hsai)
-{
-
-  GPIO_InitTypeDef GPIO_InitStruct;
-/* SAI2 */
-    if(hsai->Instance==SAI2_Block_A)
-    {
-    /* Peripheral clock enable */
-    if (SAI2_client == 0)
-    {
-       __HAL_RCC_SAI2_CLK_ENABLE();
-    }
-    SAI2_client ++;
-    
-    /**SAI2_A_Block_A GPIO Configuration    
-    PI4     ------> SAI2_MCLK_A
-    PI5     ------> SAI2_SCK_A
-    PI7     ------> SAI2_FS_A
-    PI6     ------> SAI2_SD_A 
-    */
-    GPIO_InitStruct.Pin = SAI2_MCLKA_Pin|SAI2_SCKA_Pin|SAI2_FSA_Pin|SAI2_SDA_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF10_SAI2;
-    HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
-
-    }
-    if(hsai->Instance==SAI2_Block_B)
-    {
-      /* Peripheral clock enable */
-      if (SAI2_client == 0)
-      {
-       __HAL_RCC_SAI2_CLK_ENABLE();
-      }
-    SAI2_client ++;
-    
-    /**SAI2_B_Block_B GPIO Configuration    
-    PG10     ------> SAI2_SD_B 
-    */
-    GPIO_InitStruct.Pin = SAI2_SDB_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF10_SAI2;
-    HAL_GPIO_Init(SAI2_SDB_GPIO_Port, &GPIO_InitStruct);
-
-    }
-}
-
-void HAL_SAI_MspDeInit(SAI_HandleTypeDef* hsai)
-{
-
-/* SAI2 */
-    if(hsai->Instance==SAI2_Block_A)
-    {
-    SAI2_client --;
-    if (SAI2_client == 0)
-      {
-      /* Peripheral clock disable */ 
-       __HAL_RCC_SAI2_CLK_DISABLE();
-      }
-    
-    /**SAI2_A_Block_A GPIO Configuration    
-    PI4     ------> SAI2_MCLK_A
-    PI5     ------> SAI2_SCK_A
-    PI7     ------> SAI2_FS_A
-    PI6     ------> SAI2_SD_A 
-    */
-    HAL_GPIO_DeInit(GPIOI, SAI2_MCLKA_Pin|SAI2_SCKA_Pin|SAI2_FSA_Pin|SAI2_SDA_Pin);
-
-    }
-    if(hsai->Instance==SAI2_Block_B)
-    {
-    SAI2_client --;
-      if (SAI2_client == 0)
-      {
-      /* Peripheral clock disable */
-      __HAL_RCC_SAI2_CLK_DISABLE();
-      }
-    
-    /**SAI2_B_Block_B GPIO Configuration    
-    PG10     ------> SAI2_SD_B 
-    */
-    HAL_GPIO_DeInit(SAI2_SDB_GPIO_Port, SAI2_SDB_Pin);
-
-    }
 }
 
 /* USER CODE BEGIN 1 */
