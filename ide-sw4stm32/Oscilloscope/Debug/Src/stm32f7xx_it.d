@@ -39,7 +39,12 @@ Src/stm32f7xx_it.o: ../Src/stm32f7xx_it.c \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
- C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/stm32f7xx_it.h
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/stm32f7xx_it.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\xf.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-config.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-port-config.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\port-functions.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\default\eventqueue-default.h
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 
@@ -122,3 +127,13 @@ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Dr
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/stm32f7xx_it.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\xf.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-config.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-port-config.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\port-functions.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\default\eventqueue-default.h:
