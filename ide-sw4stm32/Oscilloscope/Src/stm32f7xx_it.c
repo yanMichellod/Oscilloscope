@@ -36,7 +36,8 @@
 #include "stm32f7xx_it.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "xf/xf.h"
+#include "config/xf-port-config.h"
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -58,11 +59,11 @@ void SysTick_Handler(void)
   HAL_IncTick();
   HAL_SYSTICK_IRQHandler();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-  /*
-  HAL_ADC_Start(&hadc3);
-  HAL_ADC_ConvCpltCallback(&hadc3);
-  HAL_ADC_Stop(&hadc3);
-  */
+  if(PORT_IDF_STM32CUBE != 0){
+	  if((HAL_GetTick() % XF_tickIntervalInMilliseconds()) == 0){
+		  XF_tick();
+	  }
+  }
   /* USER CODE END SysTick_IRQn 1 */
 }
 

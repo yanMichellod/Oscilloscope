@@ -1,5 +1,6 @@
 #include <config/xf-config.h>
 
+
 #if (USE_XF_PORT_STM32CUBE_CMSIS_FREERTOS_EVENT_QUEUE_IMPLEMENTATION != 0)
 
 #include <assert.h>
