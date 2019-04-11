@@ -40,13 +40,16 @@
 #include "stm32f7xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "app/factory.h"
+#include "xf/xf.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc3;
 
 DCMI_HandleTypeDef hdcmi;
+
+DMA2D_HandleTypeDef hdma2d;
 
 LTDC_HandleTypeDef hltdc;
 
@@ -81,6 +84,7 @@ static void MX_SPI2_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART6_UART_Init(void);
+static void MX_DMA2D_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -88,6 +92,7 @@ static void MX_USART6_UART_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
 
 /* USER CODE END 0 */
 
@@ -108,6 +113,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  Factory_initialize();
+  XF_initialize(20);
 
   /* USER CODE END Init */
 
@@ -130,10 +137,9 @@ int main(void)
   MX_TIM1_Init();
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
+  MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
-
-  HAL_TIM_OC_Start_IT(&htim1,htim1.Channel);
-  HAL_ADC_Start_IT(&hadc3);
+  Factory_build();
 
   /* USER CODE END 2 */
 
@@ -141,11 +147,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  /*
-	  HAL_ADC_Start_IT(&hadc3);
-	  HAL_Delay(2000);
-	  */
+	  XF_execOnce();
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -284,6 +286,30 @@ static void MX_DCMI_Init(void)
   hdcmi.Init.LineSelectMode = DCMI_LSM_ALL;
   hdcmi.Init.LineSelectStart = DCMI_OELS_ODD;
   if (HAL_DCMI_Init(&hdcmi) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* DMA2D init function */
+static void MX_DMA2D_Init(void)
+{
+
+  hdma2d.Instance = DMA2D;
+  hdma2d.Init.Mode = DMA2D_M2M;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB8888;
+  hdma2d.Init.OutputOffset = 0;
+  hdma2d.LayerCfg[1].InputOffset = 0;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB8888;
+  hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
+  hdma2d.LayerCfg[1].InputAlpha = 0;
+  if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }

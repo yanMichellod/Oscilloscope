@@ -27,6 +27,8 @@ CPP_DEPS :=
 SUBDIRS := \
 Drivers/STM32F7xx_HAL_Driver/Src \
 Src \
+app \
+app/interface \
 f7-disco-gcc/board \
 f7-disco-gcc/mcu/critical \
 f7-disco-gcc/mcu/hal \

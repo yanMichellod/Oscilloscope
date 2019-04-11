@@ -11,8 +11,8 @@ public:
     inline static void wait() { for (uint32_t i = 1000000; i > 0; i--) continue; }
     static void reset()
     {
-        Trace::out("Mcu: Reset");
-        Trace::out("----------------------------------------------------");
+        //Trace::out("Mcu: Reset");
+        //Trace::out("----------------------------------------------------");
         wait();
         NVIC_SystemReset();
     }
