@@ -9,9 +9,15 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-extern "C" void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+extern "C"{
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+
 {
 	volatile uint32_t value = HAL_ADC_GetValue(hadc);
-	printf("value : %u",value);
-	fflush(stdout);
+}
+
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
+	HAL_GPIO_TogglePin(OutputTest_GPIO_Port, OutputTest_Pin);
+	//HAL_GPIO_WritePin(OutputTest_GPIO_Port, OutputTest_Pin,GPIO_PIN_RESET);
+}
 }
