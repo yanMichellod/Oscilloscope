@@ -22,6 +22,7 @@ Src/main.o: ../Src/main.c \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dcmi.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h \
@@ -39,7 +40,13 @@ Src/main.o: ../Src/main.c \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
- C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\app\factory.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\xf.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-config.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-port-config.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\port-functions.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\default\eventqueue-default.h
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/main.h:
 
@@ -87,6 +94,8 @@ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Dr
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h:
 
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h:
+
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dcmi.h:
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h:
@@ -122,3 +131,15 @@ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Dr
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 
 C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\app\factory.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\xf.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-config.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\config\xf-port-config.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\port-functions.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\default\eventqueue-default.h:

@@ -40,6 +40,8 @@ RM := rm -rf
 -include f7-disco-gcc/mcu/hal/subdir.mk
 -include f7-disco-gcc/mcu/critical/subdir.mk
 -include f7-disco-gcc/board/subdir.mk
+-include app/interface/subdir.mk
+-include app/subdir.mk
 -include Src/subdir.mk
 -include Drivers/STM32F7xx_HAL_Driver/Src/subdir.mk
 -include subdir.mk

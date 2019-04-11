@@ -27,6 +27,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>app</name>
+			<type>2</type>
+			<location>C:/Users/yan.michello/Documents/GitHub/Oscilloscope/src/app</location>
+		</link>
+		<link>
 			<name>config</name>
 			<type>2</type>
 			<location>PARENT-2-PROJECT_LOC/src/config</location>
