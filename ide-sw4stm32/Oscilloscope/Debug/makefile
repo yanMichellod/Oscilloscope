@@ -14,7 +14,6 @@ RM := rm -rf
 -include xf/port/default/subdir.mk
 -include xf/port/active-qt/subdir.mk
 -include xf/core/subdir.mk
--include ui-gen/resources/subdir.mk
 -include ui-gen/subdir.mk
 -include startup/subdir.mk
 -include mdw/ugfx/src/gwin/subdir.mk
