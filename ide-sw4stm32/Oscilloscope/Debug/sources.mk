@@ -54,7 +54,6 @@ mdw/ugfx/src/gtrans \
 mdw/ugfx/src/gwin \
 startup \
 ui-gen \
-ui-gen/resources \
 xf/core \
 xf/port/active-qt \
 xf/port/default \
