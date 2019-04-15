@@ -8,6 +8,10 @@
 
 #include "oscilloscopecontroller.h"
 #include "gui.h"
+#define ADC_VALUES_BUFFER_SIZE 50
+
+extern "C" uint16_t adcValuesBuffer[];
+extern "C" uint32_t tableIndex;
 
 using oscilloscope::Gui;
 

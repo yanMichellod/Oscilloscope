@@ -113,8 +113,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  Factory_initialize();
   XF_initialize(20);
+  Factory_initialize();
 
   /* USER CODE END Init */
 

@@ -5,6 +5,7 @@
 #include "gui.h"
 #include "oscilloscopecontroller.h"
 
+
 OscilloscopeController * OscilloscopeController::_pInstance(nullptr);
 
 const oscilloscope::TDivOption OscilloscopeController::_tdivOptions[] = {{oscilloscope::TDIV_500us, "500 us / div"},
@@ -90,6 +91,10 @@ void OscilloscopeController::onButtonTimeMinusPressed()
 void OscilloscopeController::doShowAnalogSignal()
 {
 	// TODO: Call gui().drawGraphPoints() with the appropriate data.
+	_mutex->lock();
+	gui().drawGraphPoints(_adcValuesBuffer,_tablePosition,1);
+	_tablePosition = 0;
+	_mutex->unlock();
 }
 
 std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
@@ -105,3 +110,7 @@ std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
     }
     return "n/a";
 }
+void OscilloscopeController::setMutex(interface::XFMutex* mutex) {
+	_mutex = mutex;
+}
+

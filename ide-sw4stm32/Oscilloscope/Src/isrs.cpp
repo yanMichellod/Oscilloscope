@@ -8,12 +8,20 @@
 #include "stm32f7xx_hal.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "oscilloscopecontroller.h"
+#include "app/factory.h"
 
 extern "C"{
+
+uint32_t tableIndex = 0 ;
+uint16_t adcValuesBuffer[ADC_VALUES_BUFFER_SIZE];
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 {
 	volatile uint32_t value = HAL_ADC_GetValue(hadc);
+	adcValuesBuffer[tableIndex] = value;
+	tableIndex++;
 }
 
 void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
