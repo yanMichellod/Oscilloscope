@@ -5,6 +5,7 @@
 #include <string>
 #include "xf/behavior.h"
 #include "interface/guiobserver.h"
+#include "xf/interface/mutex.h"
 
 namespace oscilloscope {
     class Gui;
@@ -43,6 +44,10 @@ public:
 
 	inline oscilloscope::TDivValue getTDivValue() const { return _tdivValue; }
 
+	static void addValue(uint16_t newValue);
+
+	void setMutex(interface::XFMutex* mutex);
+
 	// XFReactive interface implementation
 protected:
 	XFEventStatus processEvent() override;
@@ -65,6 +70,8 @@ protected:
 	oscilloscope::Gui * _pGui;
 	uint16_t * _adcValuesBuffer;
 	uint32_t _adcValuesBufferSize;
+	uint32_t _tablePosition;
+	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
 	const int TIMEOUT_INTERVAL = 20;
