@@ -59,11 +59,12 @@ void SysTick_Handler(void)
   HAL_IncTick();
   HAL_SYSTICK_IRQHandler();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-  if(PORT_IDF_STM32CUBE != 0){
+#if(PORT_IDF_STM32CUBE != 0)
 	  if((HAL_GetTick() % XF_tickIntervalInMilliseconds()) == 0){
 		  XF_tick();
 	  }
-  }
+
+#endif
   /* USER CODE END SysTick_IRQn 1 */
 }
 

@@ -7,6 +7,8 @@
 
 
 OscilloscopeController * OscilloscopeController::_pInstance(nullptr);
+extern "C" uint32_t tableIndex;
+
 
 const oscilloscope::TDivOption OscilloscopeController::_tdivOptions[] = {{oscilloscope::TDIV_500us, "500 us / div"},
                                                                          {oscilloscope::TDIV_1ms,     "1 ms / div"},
@@ -91,10 +93,14 @@ void OscilloscopeController::onButtonTimeMinusPressed()
 void OscilloscopeController::doShowAnalogSignal()
 {
 	// TODO: Call gui().drawGraphPoints() with the appropriate data.
-	_mutex->lock();
-	gui().drawGraphPoints(_adcValuesBuffer,_tablePosition,1);
-	_tablePosition = 0;
-	_mutex->unlock();
+	//_mutex->lock();
+	gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,1);
+	/*
+	uint16_t* pArray = _adcValuesBuffer;
+	for(uint8_t i = 0 ; i < _adcValuesBufferSize ; pArray++){
+		*pArray = 0 ;
+	}*/
+	//_mutex->unlock();
 }
 
 std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)

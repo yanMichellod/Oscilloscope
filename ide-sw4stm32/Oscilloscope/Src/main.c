@@ -113,8 +113,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  XF_initialize(20);
-  Factory_initialize();
+
 
   /* USER CODE END Init */
 
@@ -139,6 +138,8 @@ int main(void)
   MX_USART6_UART_Init();
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
+  XF_initialize(20);
+  Factory_initialize();
   Factory_build();
 
   /* USER CODE END 2 */

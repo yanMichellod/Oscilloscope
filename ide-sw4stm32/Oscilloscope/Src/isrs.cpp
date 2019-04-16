@@ -22,6 +22,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	volatile uint32_t value = HAL_ADC_GetValue(hadc);
 	adcValuesBuffer[tableIndex] = value;
 	tableIndex++;
+	if(tableIndex >= ADC_VALUES_BUFFER_SIZE){
+		tableIndex = 0;
+	}
 }
 
 void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
