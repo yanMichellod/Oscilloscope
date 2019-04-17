@@ -54,7 +54,6 @@
 #include "app/factory.h"
 #include "xf/xf.h"
 #include "config/xf-config.h"
-#include "xf/port/port-functions.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -154,8 +153,6 @@ int main(void)
   MX_USART6_UART_Init();
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
-  XF_initialize(20);
-
 
   /* USER CODE END 2 */
 
@@ -194,7 +191,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  XF_execOnce();
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -1013,6 +1009,7 @@ void StartDefaultTask(void const * argument)
 {
 
   /* USER CODE BEGIN 5 */
+	 XF_initialize(20);
 	Factory_initialize();
 	Factory_build();
   /* Infinite loop */
@@ -1040,14 +1037,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-  if (htim->Instance == TIM6) {
-#if(PORT_STM32CUBE_CMSIS_FREERTOS != 0)
-	  if((HAL_GetTick() % XF_tickIntervalInMilliseconds()) == 0){
-		  XF_tick();
-	  }
 
-#endif
-  }
   /* USER CODE END Callback 1 */
 }
 
