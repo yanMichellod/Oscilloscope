@@ -13,12 +13,12 @@ namespace oscilloscope {
 typedef enum
 {
     TDIV_MIN = 0,
-    TDIV_500us,
-    TDIV_1ms,
-    TDIV_2ms,
-    TDIV_5ms,
-    TDIV_10ms,
-    TDIV_MAX
+    TDIV_500us = 1,
+    TDIV_1ms = 2,
+    TDIV_2ms = 3,
+    TDIV_5ms = 4,
+    TDIV_10ms = 5,
+    TDIV_MAX =6
 } TDivValue;
 
 typedef struct
@@ -44,10 +44,6 @@ public:
 
 	inline oscilloscope::TDivValue getTDivValue() const { return _tdivValue; }
 
-	static void addValue(uint16_t newValue);
-
-	void setMutex(interface::XFMutex* mutex);
-
 	// XFReactive interface implementation
 protected:
 	XFEventStatus processEvent() override;
@@ -71,13 +67,12 @@ protected:
 	uint16_t * _adcValuesBuffer;
 	uint32_t _adcValuesBufferSize;
 	uint32_t _tablePosition;
-	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
 	const int TIMEOUT_INTERVAL = 20;
 
 	oscilloscope::TDivValue _tdivValue;
-
+	float scale[5];
 	static const oscilloscope::TDivOption _tdivOptions[];
 };
 

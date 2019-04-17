@@ -1,7 +1,6 @@
 #include "mcu/mcu.h"
 #include "xf/xf.h"
 #include "factory.h"
-#include "xf/port/default/resourcefactory-default.h"
 
 
 extern "C" TIM_HandleTypeDef htim1;         // Defined in main.c
@@ -40,7 +39,6 @@ void Factory::build()
     HAL_ADC_Start_IT(&hadc3);                     // Start ADC conversion
     HAL_TIM_OC_Start_IT(&htim1, TIM_CHANNEL_1);   // Start TIM1 with trigger channel 1
 
-    getOscilloscopeController().setMutex(XFResourceFactoryDefault::getInstance()->createMutex());
 
     getOscilloscopeController().start();
     getGui().start();

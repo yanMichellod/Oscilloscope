@@ -23,6 +23,11 @@ OscilloscopeController::OscilloscopeController() :
 {
     assert(!_pInstance);    // Only one instance of this class allowed!
     _pInstance = this;
+    scale[0] = 20;
+    scale[1] = 10;
+    scale[2] = 5;
+    scale[3] = 2;
+    scale[4] = 0.4;
 }
 
 //static
@@ -76,6 +81,7 @@ void OscilloscopeController::onButtonTimePlusPressed()
         _tdivValue = (oscilloscope::TDivValue)(_tdivValue + 1);
 
         gui().setTimeDivisionText(getText(_tdivValue));
+
     }
 }
 
@@ -91,15 +97,7 @@ void OscilloscopeController::onButtonTimeMinusPressed()
 
 void OscilloscopeController::doShowAnalogSignal()
 {
-	// TODO: Call gui().drawGraphPoints() with the appropriate data.
-	//_mutex->lock();
-	gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,1);
-	/*
-	uint16_t* pArray = _adcValuesBuffer;
-	for(uint8_t i = 0 ; i < _adcValuesBufferSize ; pArray++){
-		*pArray = 0 ;
-	}*/
-	//_mutex->unlock();
+	gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,scale[_tdivValue-1]);
 }
 
 std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
@@ -114,8 +112,5 @@ std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
         }
     }
     return "n/a";
-}
-void OscilloscopeController::setMutex(interface::XFMutex* mutex) {
-	_mutex = mutex;
 }
 
