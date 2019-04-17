@@ -7,7 +7,6 @@
 
 
 OscilloscopeController * OscilloscopeController::_pInstance(nullptr);
-extern "C" uint32_t tableIndex;
 
 
 const oscilloscope::TDivOption OscilloscopeController::_tdivOptions[] = {{oscilloscope::TDIV_500us, "500 us / div"},

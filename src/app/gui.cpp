@@ -57,6 +57,10 @@ void Gui::initialize()
     // We want to listen for widget events
     geventListenerInit(&gl);
     gwinAttachListener(&gl);
+
+#if   (PORT_STM32CUBE_CMSIS_FREERTOS != 0)
+    createTouchThread();
+#endif
 }
 
 bool Gui::registerObserver(interface::GuiObserver * pGuiObserver)
