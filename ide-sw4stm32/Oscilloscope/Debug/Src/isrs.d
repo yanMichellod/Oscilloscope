@@ -106,9 +106,7 @@ Src/isrs.o: ../Src/isrs.cpp \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gdriver/gdriver_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gmisc/gmisc.h \
@@ -357,11 +355,7 @@ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rul
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h:
 
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h:
-
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h:
-
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h:
+c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h:
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h:
 

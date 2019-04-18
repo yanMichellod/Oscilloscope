@@ -30,9 +30,19 @@ mdw/ugfx/src/gdisp/gdisp_image_jpg.o: \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gdriver/gdriver_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/FreeRTOSConfig.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/main.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/portmacro.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gmisc/gmisc.h \
@@ -127,11 +137,31 @@ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rul
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h:
 
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h:
+c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h:
 
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h:
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h:
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/FreeRTOSConfig.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Inc/main.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/portmacro.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+
+C:/Users/yan.michello/Documents/GitHub/Oscilloscope/ide-sw4stm32/Oscilloscope/Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h:
 

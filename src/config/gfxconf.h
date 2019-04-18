@@ -28,7 +28,7 @@
 
 //<h> uGFX configuration without operating system.
 //<i> Full documentation available at: https://wiki.ugfx.io
-#define CONFIGURATION_WITH_OS	GFXOFF
+#define CONFIGURATION_WITH_OS	GFXON
 ///////////////////////////////////////////////////////////////////////////
 // GOS - One of these must be defined, preferably in your Makefile       //
 ///////////////////////////////////////////////////////////////////////////

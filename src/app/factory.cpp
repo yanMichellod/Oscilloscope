@@ -1,6 +1,7 @@
 #include "mcu/mcu.h"
 #include "xf/xf.h"
 #include "factory.h"
+#include "xf/port/stm32cube-cmsis-freertos/resourcefactory.h"
 
 
 extern "C" TIM_HandleTypeDef htim1;         // Defined in main.c
@@ -30,6 +31,7 @@ Factory::Factory()
 void Factory::initialize()
 {
     getOscilloscopeController().initialize(getGui(), adcValuesBuffer, ADC_VALUES_BUFFER_SIZE);
+    getOscilloscopeController().setMutex(interface::XFResourceFactory::getInstance()->createMutex());
     getGui().initialize();
 }
 

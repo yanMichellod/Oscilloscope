@@ -110,9 +110,7 @@ app/factory.o: \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gdriver/gdriver_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rules.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gmisc/gmisc.h \
@@ -145,7 +143,10 @@ app/factory.o: \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gadc/gadc.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h \
  c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gaudio/gaudio.h \
- c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h
+ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\stm32cube-cmsis-freertos\resourcefactory.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\interface\resourcefactory.h \
+ c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\interface\thread.h
 
 c:\users\yan.michello\documents\github\oscilloscope\src\platform\f7-disco-gcc\mcu\mcu.h:
 
@@ -367,11 +368,7 @@ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_rul
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos.h:
 
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_raw32.h:
-
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_threads.h:
-
-c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_x_heap.h:
+c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gos/gos_freertos.h:
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gfile/gfile.h:
 
@@ -438,3 +435,9 @@ c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h:
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\src/gaudio/gaudio.h:
 
 c:\users\yan.michello\documents\github\oscilloscope\src\mdw\ugfx\gfx.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\port\stm32cube-cmsis-freertos\resourcefactory.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\interface\resourcefactory.h:
+
+c:\users\yan.michello\documents\github\oscilloscope\src\xf\include\xf\interface\thread.h:

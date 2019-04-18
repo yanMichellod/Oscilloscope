@@ -24,6 +24,7 @@
 	#define USE_XF_PORT_STM32CUBE_CMSIS_FREERTOS_THREAD_IMPLEMENTATION               1
 	#define USE_XF_PORT_STM32CUBE_CMSIS_FREERTOS_MUTEX_IMPLEMENTATION                1
 
+
     #define XFTHREAD_DEFAULT_STACK_SIZE                                              512
 
 	#include "stm32cube-cmsis-freertos/eventqueue.h"

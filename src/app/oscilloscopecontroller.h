@@ -44,6 +44,8 @@ public:
 
 	inline oscilloscope::TDivValue getTDivValue() const { return _tdivValue; }
 
+	void setMutex(interface::XFMutex* mutex);
+
 	// XFReactive interface implementation
 protected:
 	XFEventStatus processEvent() override;
@@ -67,9 +69,10 @@ protected:
 	uint16_t * _adcValuesBuffer;
 	uint32_t _adcValuesBufferSize;
 	uint32_t _tablePosition;
+	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
-	const int TIMEOUT_INTERVAL = 20;
+	const int TIMEOUT_INTERVAL = 100;
 
 	oscilloscope::TDivValue _tdivValue;
 	float scale[5];

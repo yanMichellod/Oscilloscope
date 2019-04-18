@@ -59,16 +59,18 @@ XFEventStatus OscilloscopeController::processEvent()
 	if (getCurrentEvent()->getEventType() == XFEvent::Initial)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-
+		_mutex->lock();
 		doShowAnalogSignal();
+		_mutex->unlock();
 	}
 
 	if (getCurrentEvent()->getEventType() == XFEvent::Timeout &&
 		getCurrentTimeout()->getId() == TIMEOUT_ID)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-
+		_mutex->lock();
 		doShowAnalogSignal();
+		_mutex->unlock();
 	}
 
 	return XFEventStatus::Consumed;
@@ -97,7 +99,13 @@ void OscilloscopeController::onButtonTimeMinusPressed()
 
 void OscilloscopeController::doShowAnalogSignal()
 {
-	gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,scale[_tdivValue-1]);
+	int i;
+	for(i = 0; i < _adcValuesBufferSize ; i ++){
+		if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] > 1250 && _adcValuesBuffer[i + 5] > _adcValuesBuffer[i]){
+			break;
+		}
+	}
+	gui().drawGraphPoints(&_adcValuesBuffer[i],_adcValuesBufferSize-i,scale[_tdivValue-1]);
 }
 
 std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
@@ -114,3 +122,6 @@ std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
     return "n/a";
 }
 
+void OscilloscopeController::setMutex(interface::XFMutex* mutex) {
+	_mutex = mutex;
+}

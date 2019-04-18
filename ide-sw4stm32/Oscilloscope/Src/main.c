@@ -153,6 +153,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
+  XF_initialize(20);
 
   /* USER CODE END 2 */
 
@@ -170,11 +171,12 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 512);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -1009,9 +1011,10 @@ void StartDefaultTask(void const * argument)
 {
 
   /* USER CODE BEGIN 5 */
-	 XF_initialize(20);
-	Factory_initialize();
-	Factory_build();
+  Factory_initialize();
+  Factory_build();
+  XF_exec();
+
   /* Infinite loop */
   for(;;)
   {
