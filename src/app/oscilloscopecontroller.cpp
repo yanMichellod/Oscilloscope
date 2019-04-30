@@ -99,13 +99,24 @@ void OscilloscopeController::onButtonTimeMinusPressed()
 
 void OscilloscopeController::doShowAnalogSignal()
 {
-	int i;
-	for(i = 0; i < _adcValuesBufferSize ; i ++){
-		if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] > 1250 && _adcValuesBuffer[i + 5] > _adcValuesBuffer[i]){
-			break;
+	if(gui().isRedLedEnabled()){
+		int i;
+		for(i = 0; i < _adcValuesBufferSize ; i ++){
+
+			if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] < 1250 && _adcValuesBuffer[i + 2] > _adcValuesBuffer[i]){
+				break;
+			}
+			/*
+			if(_adcValuesBuffer[i] > 1200  && _adcValuesBuffer[i + 2] > _adcValuesBuffer[i]){
+				break;
+			}*/
 		}
+		gui().drawGraphPoints(&_adcValuesBuffer[i],_adcValuesBufferSize-i,scale[_tdivValue-1]);
 	}
-	gui().drawGraphPoints(&_adcValuesBuffer[i],_adcValuesBufferSize-i,scale[_tdivValue-1]);
+	else{
+		gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,scale[_tdivValue-1]);
+	}
+
 }
 
 std::string OscilloscopeController::getText(oscilloscope::TDivValue tdivValue)
