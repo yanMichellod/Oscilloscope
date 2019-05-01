@@ -59,18 +59,16 @@ XFEventStatus OscilloscopeController::processEvent()
 	if (getCurrentEvent()->getEventType() == XFEvent::Initial)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-		_mutex->lock();
+		isConverted = 1;
 		doShowAnalogSignal();
-		_mutex->unlock();
 	}
 
 	if (getCurrentEvent()->getEventType() == XFEvent::Timeout &&
 		getCurrentTimeout()->getId() == TIMEOUT_ID)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-		_mutex->lock();
+		isConverted = 1;
 		doShowAnalogSignal();
-		_mutex->unlock();
 	}
 
 	return XFEventStatus::Consumed;

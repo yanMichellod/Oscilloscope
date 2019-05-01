@@ -7,6 +7,9 @@
 #include "interface/guiobserver.h"
 #include "xf/interface/mutex.h"
 
+extern "C" uint8_t isConverted;
+
+
 namespace oscilloscope {
     class Gui;
 
@@ -72,7 +75,7 @@ protected:
 	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
-	const int TIMEOUT_INTERVAL = 100;
+	const int TIMEOUT_INTERVAL = 50;
 
 	oscilloscope::TDivValue _tdivValue;
 	float scale[5];

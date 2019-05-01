@@ -8,7 +8,7 @@
 
 #include "oscilloscopecontroller.h"
 #include "gui.h"
-#define ADC_VALUES_BUFFER_SIZE 400
+#define ADC_VALUES_BUFFER_SIZE 800
 
 extern "C" uint16_t adcValuesBuffer[];
 extern "C" uint32_t tableIndex;

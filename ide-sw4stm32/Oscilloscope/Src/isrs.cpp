@@ -15,15 +15,19 @@ extern "C"{
 
 uint32_t tableIndex = 0 ;
 uint16_t adcValuesBuffer[ADC_VALUES_BUFFER_SIZE];
+uint8_t isConverted = 1;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 {
-	volatile uint32_t value = HAL_ADC_GetValue(hadc);
-	adcValuesBuffer[tableIndex] = value;
-	tableIndex++;
-	if(tableIndex >= ADC_VALUES_BUFFER_SIZE){
-		tableIndex = 0;
+	if(isConverted == 1){
+		volatile uint32_t value = HAL_ADC_GetValue(hadc);
+		adcValuesBuffer[tableIndex] = value;
+		tableIndex++;
+		if(tableIndex >= ADC_VALUES_BUFFER_SIZE){
+			isConverted = 0;
+			tableIndex = 0;
+		}
 	}
 }
 

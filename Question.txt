@@ -1,0 +1,27 @@
+Task 6
+1. Il faut un système synchrone pour 
+2. Il est possible de rafraîchir l'écran avec un XF, car c'est une action asynchrone.
+3. C'est le timer hardware qui a la plus grande priorité, car c'est le timer hardware trig le convertisseur A/D.
+
+Task 7
+1. Il faut 10'000 samples/s
+2. Non pas besoin de filtres, l'utilisation d'un convertisseur A/D crée déjà un filtre passe-bas.
+3. Il faut qu'elle soit plus élevée.
+4. Le canal IN0
+5. oui en mode Continuous Conversion
+
+Task 13 
+1.160 kHz
+2..
+
+Task 14
+1.200kHz
+2. Non il n'y pas forcement besoin de priorité pour les tâches asynchrones.
+3.Il est utile pour une application qui utilise beaucoup de périphériques afin de séparer les tâches.
+
+Tâches accomplies
+
+- La fonction trigger fonctionne s'il y a assez de points pour rentrer dans la fourchette du trigger.
+- 
+
+  
