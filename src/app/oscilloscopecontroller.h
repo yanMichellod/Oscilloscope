@@ -16,12 +16,13 @@ namespace oscilloscope {
 typedef enum
 {
     TDIV_MIN = 0,
-    TDIV_500us = 1,
-    TDIV_1ms = 2,
-    TDIV_2ms = 3,
-    TDIV_5ms = 4,
-    TDIV_10ms = 5,
-    TDIV_MAX =6
+	TDIV_100us = 1,
+    TDIV_500us = 2,
+    TDIV_1ms = 3,
+    TDIV_2ms = 4,
+    TDIV_5ms = 5,
+    TDIV_10ms = 6,
+    TDIV_MAX =7
 } TDivValue;
 
 typedef struct
@@ -75,7 +76,7 @@ protected:
 	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
-	const int TIMEOUT_INTERVAL = 50;
+	const int TIMEOUT_INTERVAL = 100;
 
 	oscilloscope::TDivValue _tdivValue;
 	float scale[5];

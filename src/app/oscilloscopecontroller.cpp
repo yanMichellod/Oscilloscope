@@ -9,7 +9,8 @@
 OscilloscopeController * OscilloscopeController::_pInstance(nullptr);
 
 
-const oscilloscope::TDivOption OscilloscopeController::_tdivOptions[] = {{oscilloscope::TDIV_500us, "500 us / div"},
+const oscilloscope::TDivOption OscilloscopeController::_tdivOptions[] = {{oscilloscope::TDIV_100us, "100 us / div"},
+																		 {oscilloscope::TDIV_500us, "500 us / div"},
                                                                          {oscilloscope::TDIV_1ms,     "1 ms / div"},
                                                                          {oscilloscope::TDIV_2ms,     "2 ms / div"},
                                                                          {oscilloscope::TDIV_5ms,     "5 ms / div"},
@@ -23,11 +24,12 @@ OscilloscopeController::OscilloscopeController() :
 {
     assert(!_pInstance);    // Only one instance of this class allowed!
     _pInstance = this;
-    scale[0] = 20;
-    scale[1] = 10;
-    scale[2] = 5;
-    scale[3] = 2;
-    scale[4] = 0.4;
+    scale[0] = 3.5;
+    scale[1] = 0.7;
+    scale[2] = 0.35;
+    scale[3] = 0.175;
+    scale[4] = 0.07;
+    scale[5] = 0.035;
 }
 
 //static
@@ -104,10 +106,6 @@ void OscilloscopeController::doShowAnalogSignal()
 			if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] < 1250 && _adcValuesBuffer[i + 2] > _adcValuesBuffer[i]){
 				break;
 			}
-			/*
-			if(_adcValuesBuffer[i] > 1200  && _adcValuesBuffer[i + 2] > _adcValuesBuffer[i]){
-				break;
-			}*/
 		}
 		gui().drawGraphPoints(&_adcValuesBuffer[i],_adcValuesBufferSize-i,scale[_tdivValue-1]);
 	}
