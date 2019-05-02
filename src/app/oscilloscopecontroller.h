@@ -76,7 +76,7 @@ protected:
 	interface::XFMutex* _mutex;
 
 	const int TIMEOUT_ID = 0;
-	const int TIMEOUT_INTERVAL = 100;
+	const int TIMEOUT_INTERVAL = 200;
 
 	oscilloscope::TDivValue _tdivValue;
 	float scale[5];

@@ -1,5 +1,6 @@
 Task 6
-1. Il faut un système synchrone pour 
+1. Il faut un système synchrone pour faire fonctionner un A/D correctement, donc un XF et un RTOS ne sont pas idéaux.
+   Il faut utiliser des périphériques hardware pour être le plus précis possible.
 2. Il est possible de rafraîchir l'écran avec un XF, car c'est une action asynchrone.
 3. C'est le timer hardware qui a la plus grande priorité, car c'est le timer hardware trig le convertisseur A/D.
 
@@ -12,16 +13,19 @@ Task 7
 
 Task 13 
 1.160 kHz
-2..
+2. Les ADC sont MSPS (Mega Samples Per Second), ce ne sont pas ces composants qui limitent le système.
 
 Task 14
-1.200kHz
+1. 100kHz
 2. Non il n'y pas forcement besoin de priorité pour les tâches asynchrones.
-3.Il est utile pour une application qui utilise beaucoup de périphériques afin de séparer les tâches.
+3. Il est utile pour une application qui utilise beaucoup de périphériques afin de séparer les tâches et de mettre des priorité à des tâches importantes.
 
 Tâches accomplies
 
-- La fonction trigger fonctionne s'il y a assez de points pour rentrer dans la fourchette du trigger.
-- 
+- La fonction trigger fonctionne pour les signaux sinusoïdaux et rectangulaires s'il y a assez de points pour rentrer dans la fourchette du trigger.
+  Le trigger pour les signaux carré n'a pas été implémenté
+- La fonction de mise à l'échelle fonctionne mais l'échelle peut varier suivant le nombre de points qu'on mesure, il faudrait avoir une fonction pour calculer les
+  valeurs de scaling
+- le DMA n'a pas été implémenté
 
   

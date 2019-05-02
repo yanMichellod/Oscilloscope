@@ -61,16 +61,16 @@ XFEventStatus OscilloscopeController::processEvent()
 	if (getCurrentEvent()->getEventType() == XFEvent::Initial)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-		isConverted = 1;
 		doShowAnalogSignal();
+		isConverted = 1;
 	}
 
 	if (getCurrentEvent()->getEventType() == XFEvent::Timeout &&
 		getCurrentTimeout()->getId() == TIMEOUT_ID)
 	{
 		scheduleTimeout(TIMEOUT_ID, TIMEOUT_INTERVAL);
-		isConverted = 1;
 		doShowAnalogSignal();
+		isConverted = 1;
 	}
 
 	return XFEventStatus::Consumed;
@@ -103,7 +103,7 @@ void OscilloscopeController::doShowAnalogSignal()
 		int i;
 		for(i = 0; i < _adcValuesBufferSize ; i ++){
 
-			if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] < 1250 && _adcValuesBuffer[i + 2] > _adcValuesBuffer[i]){
+			if(_adcValuesBuffer[i] > 1200 && _adcValuesBuffer[i] < 1250 && (_adcValuesBuffer[i + 15] - _adcValuesBuffer[i] > 0)){
 				break;
 			}
 		}
